@@ -1,0 +1,4 @@
+{
+  "table": "balance",
+  "change": "add index idx_coint_name(coint_name)"
+}

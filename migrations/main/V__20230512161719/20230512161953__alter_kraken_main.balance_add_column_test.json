@@ -1,0 +1,4 @@
+{
+  "table": "balance",
+  "change": "add column test varchar(20) default ''"
+}
