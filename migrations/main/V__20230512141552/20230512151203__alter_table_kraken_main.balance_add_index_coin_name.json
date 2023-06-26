@@ -1,4 +1,4 @@
 {
   "table": "balance",
-  "change": "add index idx_aclass(aclass)"
+  "change": "add index idx_coin_name(coin_name)"
 }

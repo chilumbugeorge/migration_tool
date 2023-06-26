@@ -46,7 +46,7 @@ Options:
       create                      -C create -s <db-cluster> -c <file-script> -v <version>
       info                        -C info -s <db-cluster> -u <db-user> -h <db-host> -d <db-name> -v <version>
       list                        -C list -s <db-cluster>
-      migrate                     -C migrate -s <db-cluster> -u <db-user> -h <db-host> -d <db-name> -v <version> -r <chg> -t <infdba>
+      migrate                     -C migrate -s <db-cluster> -u <db-user> -h <db-host> -d <db-name> -v <version> -c <migration-file> -r <chg> -t <infdba>
       pull                        -C pull -s <db-cluster> -u <db-user> -h <db-host> -d <db-name> 
       push                        -C pull -s <db-cluster> -u <db-user> -h <db-host> -d <db-name> 
       version                     -C version -s <db-cluster>
@@ -211,7 +211,7 @@ elif [ ! -z "$cmds" ] && [ ! -z "$cluster" ] && [ ! -z "$username" ] && [ ! -z "
         echo
         password=$PASSWD
 
-        mysqldump -u${username} -p${password}  -h${hostname} ${database} --compact --skip-comments --triggers --events --routines --set-gtid-purged=OFF > $init_schemas/init.sql &&
+        mysqldump -u${username} -p${password}  -h${hostname} ${database} --compact --skip-comments --triggers --events --routines > $init_schemas/init.sql &&
         echo "Data import for $database done"
 	exit 0
     elif [ "$cmds" == "push" ]; then

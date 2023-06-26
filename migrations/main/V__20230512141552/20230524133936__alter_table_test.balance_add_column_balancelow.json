@@ -1,0 +1,4 @@
+{
+  "table": "balance",
+  "change": "add column bigint not null"
+}
